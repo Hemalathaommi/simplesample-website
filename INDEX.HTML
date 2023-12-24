@@ -1,0 +1,71 @@
+<html>
+<body>
+<style>
+body{
+background-color:lightgreen;
+}
+table{
+background-color:rgb(103, 103, 12);
+padding:70px;
+margin:60px;
+border:3px solid black;
+height: 50%;
+width: 50%;
+} 
+td{
+border:none;
+}
+button{
+background-color:blue;
+border-radius:50%;                                                                                      
+height:50px;
+width: 60px;
+}
+table td input{
+width:100%;
+height:100%;
+}
+</style>
+<table>
+<tr>
+<td colspan="3"><input type="text" id="calc" value></td>
+<td><button onclick="clearKey()">clear</button></td><br>
+</tr>
+<tr>
+<td><button onclick="addKey('9')">9</button></td>
+<td><button onclick="addKey('8')">8</button></td>
+<td><button onclick="addKey('7')">7</button></td>
+<td><button onclick="addKey('+')">+</button></td><br>
+</tr>
+<tr>
+<td><button onclick="addKey('6')">6</button></td>
+<td><button onclick="addKey('5')">5</button></td>
+<td><button onclick="addKey('4')">4</button></td>
+<td><button onclick="addKey('-')">-</button></td>
+</tr>
+<tr>
+<td><button onclick="addKey('3')">3</button></td>
+<td><button onclick="addKey('2')">2</button></td>
+<td><button onclick="addKey('1')">1</button></td>
+<td><button onclick="addKey('/')">/</button></td>
+</tr>
+<tr>
+<td><button onclick="addKey('0')">0</button></td>
+<td><button onclick="addKey('%')">%</button></td>
+<td><button onclick="addKey('*')">*</button></td>
+<td><button onclick="calculate('=')">=</button></td>
+</tr>
+</table>
+<script>
+    function calculate(){
+        document.getElementById("calc").value=eval(document.getElementById("calc").value)
+    }
+    function clearKey(){
+        document.getElementById("calc").value="";
+    }
+    function addKey(keyChar){
+            document.getElementById("calc").value+=keyChar;
+        }
+</script>
+</body>
+</html>
